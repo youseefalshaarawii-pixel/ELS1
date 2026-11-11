@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light" data-font-size="normal">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="البوابة الإخبارية الرسمية للمدرسة المصرية للغات - المنصة الإعلامية لأخبار الطلاب والمعلمين والفعاليات المدرسية">
+  <title>المدرسة المصرية للغات | Egyptian Language School</title>
+  
+  <!-- خط Alexandria فائق الحداثة والأناقة مع خط Plus Jakarta Sans للإنجليزية -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- ملف الأنماط والتصميم -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- شريط الإعلانات العاجلة والهوية (Breaking News & Live Bar) -->
+  <!-- شريط الإعلانات العاجلة والهوية والطقس الميداني -->
+  <header class="top-announcement-bar">
+    <div class="container announcement-content">
+      <div class="breaking-news-box">
+        <span class="breaking-tag" data-i18n="breaking_tag">عاجل</span>
+        <div class="breaking-marquee" id="breaking-marquee-text">
+          <span>انطلاق أسبوع الابتكار العلمي والتكنولوجي لجميع المراحل الدراسية بمشاركة كبرى الجامعات</span>
+        </div>
+      </div>
+      <div class="announcement-meta">
+        <!-- ويدجت طقس الحرم المدرسي بالتجمع الخامس -->
+        <div class="campus-weather-pill" id="campus-weather-pill" title="طقس الحرم المدرسي بالتجمع الخامس">
+          <span class="weather-icon">🌤️</span>
+          <span class="weather-text" data-i18n="weather_text">التجمع الخامس 24°C • معتدل ومشمس</span>
+        </div>
+        <span id="current-date-display" class="date-badge"></span>
+        <span class="motto-badge" data-i18n="school_motto">العلم • الأخلاق • التميز</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- الترويسة الرئيسية للموقع (Main Editorial Header) -->
+  <header class="main-header">
+    <div class="container header-inner">
+      
+      <!-- شعار المدرسة (النقر عليه 5 مرات متتالية يفتح لوحة المبرمج السرية) -->
+      <div class="school-brand-block" id="school-secret-crest" title="المدرسة المصرية للغات" role="button" tabindex="0" aria-label="شعار المدرسة المصرية للغات">
+        <div class="school-crest-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 4L7 11V22C7 33.2 14.3 43.6 24 46C33.7 43.6 41 33.2 41 22V11L24 4Z" fill="currentColor" class="crest-bg" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M24 13L16 18V28L24 33L32 28V18L24 13Z" fill="currentColor" class="crest-inner" stroke="currentColor" stroke-width="2"/>
+            <path d="M24 21V33M16 26L24 31L32 26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="24" cy="17" r="2.5" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="school-titles">
+          <h1 class="school-main-title" data-i18n="school_title">المدرسة المصرية للغات</h1>
+          <p class="school-subtitle" data-i18n="school_subtitle">Egyptian Language School — المنصة الإخبارية المعتمدة</p>
+        </div>
+      </div>
+
+      <!-- أدوات التحكم والبحث وتبديل اللغة والمظهر -->
+      <div class="header-actions">
+        <!-- شريط البحث السريع -->
+        <div class="search-input-wrapper">
+          <svg class="search-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
+          </svg>
+          <input type="search" id="news-search-input" placeholder="ابحث في الأخبار والفعاليات..." aria-label="بحث في الأخبار" data-i18n-placeholder="search_placeholder">
+        </div>
+
+        <!-- الزرار المتوهج المضيء من الجوانب لمجلة المدرسة التفاعلية ثلاثية الأبعاد -->
+        <button id="open-magazine-btn" class="glowing-magazine-btn" aria-label="فتح المجلة المدرسية التفاعلية">
+          <span class="btn-sparkle-icon">✨</span>
+          <div class="glowing-btn-text">
+            <strong class="btn-main-label" data-i18n="mag_btn_title">📖 مجلة المدرسة التفاعلية</strong>
+            <small class="btn-sub-label" data-i18n="mag_btn_sub">إصدار صحفي مقلوب ثلاثي الأبعاد</small>
+          </div>
+        </button>
+
+        <!-- زر تبديل اللغة (عربي / English) -->
+        <button id="lang-toggle-btn" class="header-icon-btn lang-btn" aria-label="تبديل اللغة">
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-1.946 2H7.975c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.946 0h1.946a6.004 6.004 0 01-2.781 4.118c.454-1.148.748-2.572.837-4.118zM6.029 11H4.083a6.004 6.004 0 002.781 4.118c-.454-1.148-.748-2.572-.837-4.118z" clip-rule="evenodd"/>
+          </svg>
+          <span id="current-lang-text">English</span>
+        </button>
+
+        <!-- زر تبديل الوضع الليلي السريع -->
+        <button id="quick-theme-btn" class="header-icon-btn" aria-label="تبديل الوضع الليلي والنهاري" title="تبديل الوضع الليلي / النهاري">
+          <span class="theme-sun-icon">☀️</span>
+          <span class="theme-moon-icon hidden">🌙</span>
+        </button>
+
+        <!-- زر الأخبار المحفوظة والمفضلة -->
+        <button id="header-bookmarks-btn" class="header-icon-btn" aria-label="الأخبار المحفوظة" title="الأخبار المفضلة">
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"/>
+          </svg>
+          <span class="bookmarks-badge" id="bookmarks-count-badge">0</span>
+        </button>
+
+        <!-- زر الحساب والإعدادات الجانبية -->
+        <button id="open-settings-drawer-btn" class="account-btn" aria-label="فتح قائمة الحساب والإعدادات" title="الإعدادات والمظهر">
+          <div class="account-avatar-small">
+            <span id="header-user-avatar">م</span>
+            <span class="account-status-dot"></span>
+          </div>
+          <span class="account-btn-label" data-i18n="settings_title">الإعدادات</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- شريط التنقل الرئيسي بين الصفحات المنفصلة (Multi-Page Navigation Bar) -->
+  <nav class="categories-nav" aria-label="الصفحات والأقسام الرئيسية">
+    <div class="container nav-tabs-container">
+      <div class="pages-tabs-list" role="tablist">
+        
+        <!-- صفحة 1: الرئيسية -->
+        <button class="page-tab active" data-page="home" role="tab" aria-selected="true">
+          <svg class="page-tab-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+          </svg>
+          <span data-i18n="tab_home">الرئيسية</span>
+          <span class="tab-badge" id="count-home">0</span>
+        </button>
+
+        <!-- صفحة 2: أخبار الطلاب -->
+        <button class="page-tab" data-page="students" role="tab" aria-selected="false">
+          <span class="page-color-dot dot-students"></span>
+          <span data-i18n="tab_students">أخبار الطلاب</span>
+          <span class="tab-badge" id="count-students">0</span>
+        </button>
+
+        <!-- صفحة 3: المعلمين -->
+        <button class="page-tab" data-page="teachers" role="tab" aria-selected="false">
+          <span class="page-color-dot dot-teachers"></span>
+          <span data-i18n="tab_teachers">المعلمين</span>
+          <span class="tab-badge" id="count-teachers">0</span>
+        </button>
+
+        <!-- صفحة 4: الفعاليات والإمتحانات -->
+        <button class="page-tab" data-page="events" role="tab" aria-selected="false">
+          <span class="page-color-dot dot-events"></span>
+          <span data-i18n="tab_events">الفعاليات والإمتحانات</span>
+          <span class="tab-badge" id="count-events">0</span>
+        </button>
+
+        <!-- صفحة 5: المفضلة والمحفوظات -->
+        <button class="page-tab" data-page="bookmarks" role="tab" aria-selected="false">
+          <svg class="page-tab-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"/>
+          </svg>
+          <span data-i18n="tab_bookmarks">المفضلة</span>
+          <span class="tab-badge" id="count-bookmarks">0</span>
+        </button>
+
+      </div>
+
+      <!-- أدوات الفرز والترتيب -->
+      <div class="nav-extra-tools">
+        <label for="sort-select" class="sort-label" data-i18n="sort_label">الترتيب:</label>
+        <select id="sort-select" class="sort-select" aria-label="ترتيب الأخبار">
+          <option value="newest" data-i18n="sort_newest">الأحدث أولاً</option>
+          <option value="oldest" data-i18n="sort_oldest">الأقدم أولاً</option>
+          <option value="readtime" data-i18n="sort_readtime">الأسرع قراءة</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <!-- محتوى الصفحات المنفصلة (Multi-Page Views Container) -->
+  <main class="main-content container">
+    
+    <!-- ==========================================
+         الصفحة 1: الرئيسية (Home Page View)
+         ========================================== -->
+    <div id="view-page-home" class="page-view-panel active">
+      <!-- قسم خبر الأسبوع المميز -->
+      <section id="hero-featured-section" class="featured-hero-wrapper" aria-labelledby="featured-news-title">
+        <!-- يتم توليد محتوى هذا القسم ديناميكياً -->
+      </section>
+
+      <!-- التخطيط المزدوج: سحب الأخبار + كروت اليوم المتحركة -->
+      <div class="editorial-dual-layout">
+        
+        <!-- سحب الأخبار -->
+        <section class="news-feed-section">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <div class="cloud-section-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+                </svg>
+                <span data-i18n="cloud_badge">سحب الأخبار والتحديثات</span>
+              </div>
+              <h2 class="section-title" data-i18n="home_section_title">أحدث العناوين والمستجدات</h2>
+              <p class="section-subtitle" data-i18n="home_section_subtitle">انقر على أي سحابة إخبارية لفتح وتصفح المقال بالكامل</p>
+            </div>
+            <div class="view-stats" id="active-filter-stats">
+              <span data-i18n="displaying_count">عرض</span> <span id="visible-count">0</span> <span data-i18n="articles_word">خبر</span>
+            </div>
+          </div>
+
+          <div id="news-grid-container" class="news-clouds-grid" role="region" aria-live="polite"></div>
+        </section>
+
+        <!-- ويدجت أخبار اليوم المتحركة (10 ثوانٍ) -->
+        <aside class="today-ticker-aside" aria-label="أخبار اليوم العاجلة">
+          <div class="ticker-widget-card" id="today-ticker-widget">
+            <div class="ticker-header">
+              <div class="ticker-title-group">
+                <span class="live-beacon"></span>
+                <h3 class="ticker-main-title" data-i18n="ticker_title">موجز أخبار اليوم</h3>
+              </div>
+              <div class="ticker-timer-tag" title="تتقلب الأخبار تلقائياً كل 10 ثوانٍ">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                </svg>
+                <span id="slider-countdown-text">10s</span>
+              </div>
+            </div>
+
+            <div class="ticker-progress-track">
+              <div class="ticker-progress-bar" id="ticker-progress-bar"></div>
+            </div>
+
+            <div class="ticker-card-viewport" id="ticker-slider-viewport"></div>
+
+            <div class="ticker-footer-controls">
+              <div class="slider-dots" id="slider-dots-container"></div>
+              <div class="slider-nav-arrows">
+                <button id="ticker-prev-btn" class="slider-nav-btn" aria-label="السابق">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </button>
+                <button id="ticker-pause-btn" class="slider-nav-btn" aria-label="إيقاف مؤقت / استئناف">
+                  <svg id="pause-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                  </svg>
+                  <svg id="play-icon" class="hidden" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/>
+                  </svg>
+                </button>
+                <button id="ticker-next-btn" class="slider-nav-btn" aria-label="التالي">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+
+    <!-- ==========================================
+         الصفحة 2: أخبار الطلاب (Students Dedicated View)
+         ========================================== -->
+    <div id="view-page-students" class="page-view-panel">
+      <div class="dedicated-page-hero students-hero">
+        <div class="dedicated-hero-content">
+          <span class="hero-subtag" data-i18n="students_hero_tag">بوابة التميز الطلابي</span>
+          <h2 class="dedicated-hero-title" data-i18n="students_hero_title">شؤون وتفوق الطلاب والأنشطة الإبداعية</h2>
+          <p class="dedicated-hero-desc" data-i18n="students_hero_desc">تغطية شاملة لكل إنجازات وبطولات ومشاريع الطلاب في جميع المراحل (الابتدائية، الإعدادية، والثانوية).</p>
+          <div class="dedicated-stats-strip">
+            <div class="stat-bubble">
+              <span class="stat-number">45+</span>
+              <span class="stat-text" data-i18n="stat_projects">مشروع ابتكاري سنوي</span>
+            </div>
+            <div class="stat-bubble">
+              <span class="stat-number">12</span>
+              <span class="stat-text" data-i18n="stat_sports">فريق رياضي منافس</span>
+            </div>
+            <div class="stat-bubble">
+              <span class="stat-number">100%</span>
+              <span class="stat-text" data-i18n="stat_success">نسبة التفوق والنجاح</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dedicated-content-wrap">
+        <div class="section-header">
+          <h3 class="section-title" data-i18n="students_list_title">أحدث تقارير وإعلانات الطلاب</h3>
+          <span class="view-stats" id="students-page-count"></span>
+        </div>
+        <div id="students-grid-container" class="news-clouds-grid"></div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         الصفحة 3: المعلمين (Faculty & Teachers Dedicated View)
+         ========================================== -->
+    <div id="view-page-teachers" class="page-view-panel">
+      <div class="dedicated-page-hero teachers-hero">
+        <div class="dedicated-hero-content">
+          <span class="hero-subtag" data-i18n="teachers_hero_tag">ركن الكادر الأكاديمي</span>
+          <h2 class="dedicated-hero-title" data-i18n="teachers_hero_title">منصة هيئة التدريس والتطوير المهني</h2>
+          <p class="dedicated-hero-desc" data-i18n="teachers_hero_desc">ورش العمل، التدريب على أحدث تقنيات التعليم الرقمي والذكاء الاصطناعي، وتكريمات العطاء المستمر.</p>
+          <div class="dedicated-stats-strip">
+            <div class="stat-bubble">
+              <span class="stat-number">150+</span>
+              <span class="stat-text" data-i18n="stat_teachers">معلماً ومعلمة مؤهلين</span>
+            </div>
+            <div class="stat-bubble">
+              <span class="stat-number">24</span>
+              <span class="stat-text" data-i18n="stat_workshops">ورشة تطوير مهني سنوياً</span>
+            </div>
+            <div class="stat-bubble">
+              <span class="stat-number">A+</span>
+              <span class="stat-text" data-i18n="stat_accreditation">اعتماد جودة التعليم</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dedicated-content-wrap">
+        <div class="section-header">
+          <h3 class="section-title" data-i18n="teachers_list_title">أحدث أخبار وفعاليات هيئة التدريس</h3>
+          <span class="view-stats" id="teachers-page-count"></span>
+        </div>
+        <div id="teachers-grid-container" class="news-clouds-grid"></div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         الصفحة 4: الفعاليات والإمتحانات (Events & Exams Dedicated View)
+         ========================================== -->
+    <div id="view-page-events" class="page-view-panel">
+      <div class="dedicated-page-hero events-hero">
+        <div class="dedicated-hero-content">
+          <span class="hero-subtag" data-i18n="events_hero_tag">التقويم واللجان الرسمية</span>
+          <h2 class="dedicated-hero-title" data-i18n="events_hero_title">جدول الامتحانات والفعاليات المدرسية</h2>
+          <p class="dedicated-hero-desc" data-i18n="events_hero_desc">مواعيد الاختبارات الدورية، توجيهات اللجان، رحلات الكشافة، وجداول الأنشطة الموسمية.</p>
+          
+          <!-- ويدجت العداد التنازلي للاختبارات القادمة -->
+          <div class="exam-countdown-widget">
+            <div class="countdown-badge-title" data-i18n="countdown_title">⏳ المتبقي على بدء اختبارات منتصف الفصل الدراسي:</div>
+            <div class="countdown-digits-strip">
+              <div class="digit-box"><span id="cd-days">04</span><small data-i18n="cd_days">أيام</small></div>
+              <div class="digit-sep">:</div>
+              <div class="digit-box"><span id="cd-hours">12</span><small data-i18n="cd_hours">ساعة</small></div>
+              <div class="digit-sep">:</div>
+              <div class="digit-box"><span id="cd-minutes">30</span><small data-i18n="cd_mins">دقيقة</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dedicated-content-wrap">
+        <div class="section-header">
+          <h3 class="section-title" data-i18n="events_list_title">جداول الاختبارات وتقارير الفعاليات</h3>
+          <span class="view-stats" id="events-page-count"></span>
+        </div>
+        <div id="events-grid-container" class="news-clouds-grid"></div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         الصفحة 5: المفضلة والأخبار المحفوظة (Bookmarks Dedicated View)
+         ========================================== -->
+    <div id="view-page-bookmarks" class="page-view-panel">
+      <div class="bookmarks-page-header">
+        <div class="bookmarks-title-wrap">
+          <h2 class="section-title" data-i18n="bookmarks_page_title">الأخبار والمقالات المحفوظة</h2>
+          <p class="section-subtitle" data-i18n="bookmarks_page_desc">يمكنك حفظ أي خبر ترغب في قراءته لاحقاً بالضغط على أيقونة الإشارة المرجعية داخل المقال.</p>
+        </div>
+        <button id="clear-bookmarks-btn" class="btn btn-outline" data-i18n="clear_bookmarks">مسح كل المحفوظات</button>
+      </div>
+      <div id="bookmarks-grid-container" class="news-clouds-grid"></div>
+    </div>
+
+    <!-- شاشة عدم وجود نتائج -->
+    <div id="empty-state" class="empty-state hidden">
+      <div class="empty-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+        </svg>
+      </div>
+      <h3 class="empty-title" data-i18n="empty_title">لا توجد أخبار مطابقة</h3>
+      <p class="empty-desc" data-i18n="empty_desc">لم نتمكن من العثور على أي خبر يطابق معايير البحث أو التصفية الحالية.</p>
+      <button id="reset-filters-btn" class="btn btn-outline" data-i18n="reset_filters">إعادة ضبط التصفية</button>
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       لوحة تحكم المبرمج السرية لإدارة الأخبار (Secret Admin / Developer Manager)
+       تفتح فقط عند النقر 5 مرات متتالية على شعار المدرسة بالأعلى!
+       ========================================================================= -->
+  <dialog id="admin-news-modal" class="modal-dialog admin-manager-dialog" aria-labelledby="admin-manager-title">
+    <div class="modal-card admin-card">
+      <div class="admin-modal-header">
+        <div class="admin-badge-lock">
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+          </svg>
+          <span>لوحة المبرمج السرية لإدارة الأخبار المعتمدة</span>
+        </div>
+        <button id="close-admin-modal-btn" class="close-modal-btn" aria-label="إغلاق">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="admin-card-tabs">
+        <button class="admin-tab active" data-tab="add-edit">➕ إضافة / تعديل خبر</button>
+        <button class="admin-tab" data-tab="list-manage">📋 قائمة الأخبار والتحكم (<span id="admin-total-news-count">0</span>)</button>
+        <button class="admin-tab" data-tab="data-backup">💾 تصدير واستيراد كود JSON</button>
+      </div>
+
+      <div class="admin-card-body">
+        
+        <!-- تبويب 1: إضافة وتعديل خبر -->
+        <div id="admin-tab-add-edit" class="admin-tab-content active">
+          <form id="admin-news-form" class="editor-form" novalidate>
+            <input type="hidden" id="editing-article-id" value="">
+
+            <div class="form-group">
+              <label for="news-title-input" class="form-label required">عنوان الخبر الرئيسي</label>
+              <input type="text" id="news-title-input" class="form-input" placeholder="اكتب العنوان الرئيسي الواضح للحدث..." required maxlength="140">
+            </div>
+
+            <div class="form-row two-cols">
+              <div class="form-group">
+                <label for="news-category-select" class="form-label required">التصنيف والقسم</label>
+                <select id="news-category-select" class="form-select" required>
+                  <option value="أخبار الطلاب">أخبار الطلاب</option>
+                  <option value="المعلمين">المعلمين</option>
+                  <option value="الفعاليات والإمتحانات">الفعاليات والإمتحانات</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="news-author-input" class="form-label required">الجهة أو القسم الناشر</label>
+                <input type="text" id="news-author-input" class="form-input" placeholder="مثال: إدارة المرحلة الثانوية" required value="إدارة المدرسة المصرية للغات">
+              </div>
+            </div>
+
+            <div class="form-row two-cols">
+              <div class="form-group">
+                <label for="news-date-input" class="form-label required">تاريخ النشر</label>
+                <input type="date" id="news-date-input" class="form-input" required>
+              </div>
+
+              <div class="form-group">
+                <label for="news-readtime-input" class="form-label required">مدة القراءة التقديرية</label>
+                <input type="text" id="news-readtime-input" class="form-input" placeholder="مثال: 3 دقائق" value="3 دقائق" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="news-summary-input" class="form-label required">الملخص السريع (يظهر في سحابة الخبر)</label>
+              <textarea id="news-summary-input" class="form-textarea" rows="2" placeholder="موجز سريع يلخص المقال..." required maxlength="260"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="news-content-input" class="form-label required">المحتوى الكامل للمقال</label>
+              <textarea id="news-content-input" class="form-textarea large-area" rows="6" placeholder="اكتب فقرات وتفاصيل المقال الكاملة هنا..." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">صورة المقال (اختر قالباً جاهزاً أو أدخل رابطك)</label>
+              <div class="preset-images-strip" id="preset-images-selector">
+                <button type="button" class="preset-img-btn active" data-img="science">🧪 علوم وابتكار</button>
+                <button type="button" class="preset-img-btn" data-img="students">🎓 أنشطة طلابية</button>
+                <button type="button" class="preset-img-btn" data-img="teachers">📚 تدريب معلمين</button>
+                <button type="button" class="preset-img-btn" data-img="sports">⚽ بطولات رياضية</button>
+                <button type="button" class="preset-img-btn" data-img="exams">📝 قاعات واختبارات</button>
+                <button type="button" class="preset-img-btn" data-img="custom">🔗 رابط مخصص</button>
+              </div>
+              <input type="url" id="news-image-input" class="form-input" placeholder="رابط صورة مخصصة...">
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label" for="news-featured-toggle">
+                <input type="checkbox" id="news-featured-toggle">
+                <div class="checkbox-texts">
+                  <span class="check-title">تثبيت كـ "الخبر المميز لهذا الأسبوع" في الصفحة الرئيسية</span>
+                </div>
+              </label>
+            </div>
+
+            <div class="form-actions-footer">
+              <button type="button" id="cancel-edit-btn" class="btn btn-secondary hidden">إلغاء التعديل</button>
+              <button type="submit" id="submit-news-btn" class="btn btn-primary">
+                <span>نشر الخبر في المنصة</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- تبويب 2: إدارة وحذف وتعديل الأخبار الحالية -->
+        <div id="admin-tab-list-manage" class="admin-tab-content">
+          <div class="admin-news-table-wrap">
+            <div id="admin-news-cards-list" class="admin-items-list"></div>
+          </div>
+        </div>
+
+        <!-- تبويب 3: تصدير واستيراد كود JSON الفعلي -->
+        <div id="admin-tab-data-backup" class="admin-tab-content">
+          <div class="json-backup-box">
+            <h4 class="json-box-title">تصدير الأخبار الفعلية لاستخدامها في الكود (app.js)</h4>
+            <p class="json-box-desc">عندما تنتهي من إدخال الأخبار الحقيقية للمدرسة، اضغط على زر النسخ أدناه وضع الكود مباشرة داخل مصفوفة <code>DEFAULT_NEWS_DATA</code> في ملف <code>app.js</code> ليكون الموقع جاهزاً بشكل دائم.</p>
+            <textarea id="json-export-area" class="json-textarea" readonly rows="8"></textarea>
+            <div class="json-actions">
+              <button type="button" id="copy-json-btn" class="btn btn-primary">نسخ كود الـ JSON إلى الحافظة 📋</button>
+              <button type="button" id="reset-default-news-btn" class="btn btn-ghost">استعادة الأخبار النموذجية الأصلية 🔄</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </dialog>
+
+  <!-- نافذة قراءة الخبر التفاعلية (Full Article Reader Modal) -->
+  <dialog id="article-modal" class="modal-dialog article-reader-dialog" aria-labelledby="modal-article-title">
+    <div class="modal-card reader-card">
+      
+      <!-- شريط أدوات القارئ -->
+      <div class="reader-header-bar">
+        <div class="reader-meta-group">
+          <span id="modal-category-badge" class="category-pill"></span>
+          <span id="modal-date" class="meta-item"></span>
+          <span class="meta-separator">•</span>
+          <span id="modal-read-time" class="meta-item"></span>
+        </div>
+        
+        <div class="reader-actions-group">
+          <!-- زر الاستماع الصوتي للخبر (Text-to-Speech) -->
+          <button id="modal-tts-btn" class="icon-action-btn" title="استمع إلى الخبر بصوت ذكي" aria-label="استمع إلى الخبر">
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+
+          <!-- زر حفظ الخبر في المفضلة -->
+          <button id="modal-bookmark-toggle" class="icon-action-btn" title="حفظ الخبر في المفضلة" aria-label="حفظ في المفضلة">
+            <svg id="modal-bookmark-icon" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"/>
+            </svg>
+          </button>
+
+          <!-- زر نسخ الرابط -->
+          <button id="modal-copy-link-btn" class="icon-action-btn" title="نسخ رابط الخبر" aria-label="نسخ رابط الخبر">
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"/>
+            </svg>
+          </button>
+
+          <!-- زر الطباعة -->
+          <button id="modal-print-btn" class="icon-action-btn" title="طباعة الخبر" aria-label="طباعة الخبر">
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+
+          <!-- زر الإغلاق -->
+          <button id="close-article-modal" class="close-modal-btn" aria-label="إغلاق النافذة">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- محتوى المقال المطول -->
+      <article class="reader-body">
+        <h1 id="modal-article-title" class="reader-title"></h1>
+        
+        <div class="reader-author-strip">
+          <div class="author-avatar" id="modal-author-avatar">م</div>
+          <div class="author-info">
+            <span class="author-name" id="modal-author-name"></span>
+            <span class="author-role" id="modal-author-role">إدارة التحرير والإعلام المدرسي</span>
+          </div>
+        </div>
+
+        <figure class="reader-figure">
+          <img id="modal-article-image" src="" alt="" loading="lazy">
+          <figcaption id="modal-image-caption" class="reader-figcaption"></figcaption>
+        </figure>
+
+        <p id="modal-article-lead" class="reader-lead-paragraph"></p>
+        <div id="modal-article-content" class="reader-text-flow"></div>
+
+        <!-- شريط التفاعلات المدرسية وتشجيع الطلاب (Claps & Reaction Badges) -->
+        <div class="article-reactions-bar">
+          <div class="reactions-title-wrap">
+            <span class="reactions-prompt" data-i18n="reactions_prompt">شارك تفاعلك وتشجيعك مع هذا الخبر:</span>
+          </div>
+          <div class="reactions-pills-list">
+            <button type="button" class="reaction-pill-btn" data-reaction="claps" title="تشجيع وتصفيق">
+              <span class="reaction-emoji">👏</span>
+              <span class="reaction-label" data-i18n="reaction_claps">تشجيع</span>
+              <span class="reaction-count" id="count-reaction-claps">142</span>
+            </button>
+            <button type="button" class="reaction-pill-btn" data-reaction="ideas" title="فكرة ملهمة">
+              <span class="reaction-emoji">💡</span>
+              <span class="reaction-label" data-i18n="reaction_ideas">ملهم</span>
+              <span class="reaction-count" id="count-reaction-ideas">88</span>
+            </button>
+            <button type="button" class="reaction-pill-btn" data-reaction="pride" title="فخر المدرسة المصرية للغات">
+              <span class="reaction-emoji">🏆</span>
+              <span class="reaction-label" data-i18n="reaction_pride">فخر ELS</span>
+              <span class="reaction-count" id="count-reaction-pride">215</span>
+            </button>
+            <button type="button" class="reaction-pill-btn" data-reaction="love" title="أحببته ومتميز">
+              <span class="reaction-emoji">❤️</span>
+              <span class="reaction-label" data-i18n="reaction_love">ممتاز</span>
+              <span class="reaction-count" id="count-reaction-love">176</span>
+            </button>
+          </div>
+        </div>
+
+        <footer class="reader-footer">
+          <div class="reader-tags-box">
+            <span class="tags-label" data-i18n="archive_tag">تصنيف الأرشيف:</span>
+            <span class="tag-chip" id="modal-tag-chip"></span>
+            <span class="tag-chip" data-i18n="school_title">المدرسة المصرية للغات</span>
+            <span class="tag-chip">2026/2027</span>
+          </div>
+          <div class="official-stamp-seal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+            </svg>
+            <span data-i18n="official_seal_text">منشور رسمي معتمد من إدارة المدرسة المصرية للغات</span>
+          </div>
+        </footer>
+      </article>
+    </div>
+  </dialog>
+
+  <!-- =========================================================================
+       نافذة المجلة المدرسية التفاعلية ثلاثية الأبعاد (Digital Magazine / Flipbook Modal)
+       تجربة صحفية تحاكي المجلات الورقية المطبوعة القابلة للتقليب!
+       ========================================================================= -->
+  <dialog id="magazine-flipbook-modal" class="modal-dialog magazine-dialog" aria-labelledby="magazine-modal-title">
+    <div class="modal-card magazine-card">
+      
+      <!-- شريط أدوات المجلة العلوي الفاخر -->
+      <div class="magazine-top-bar">
+        <div class="magazine-title-meta">
+          <span class="magazine-badge-issue" data-i18n="mag_badge">المجلة الدورية الرسمية • الإصدار 01</span>
+          <h3 id="magazine-modal-title" class="magazine-heading" data-i18n="mag_title">جريدة ومجلة المدرسة المصرية للغات</h3>
+        </div>
+        <div class="magazine-top-actions">
+          <button id="magazine-print-btn" class="icon-action-btn" title="طباعة المجلة" aria-label="طباعة المجلة">
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+          <button id="close-magazine-btn" class="close-modal-btn" aria-label="إغلاق المجلة" title="إغلاق المجلة">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- مساحة عرض صفحات المجلة المفتوحة (Flipbook Open Spread Viewport) -->
+      <div class="flipbook-viewport" id="flipbook-viewport">
+        
+        <!-- أزرار التقليب السريع العائمة على جانبي المجلة -->
+        <button type="button" id="mag-side-prev" class="book-side-nav-btn prev-side" aria-label="الصفحة السابقة" title="الصفحة السابقة">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button type="button" id="mag-side-next" class="book-side-nav-btn next-side" aria-label="الصفحة التالية" title="الصفحة التالية">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+
+        <!-- الملف 1: الغلاف الملكي والافتتاحية الرسمية (Spread 1) -->
+        <div class="magazine-page active" data-page-num="1">
+          <div class="open-magazine-spread">
+            <!-- الصفحة اليمنى (Right Page): غلاف المجلة الصحفي الفاخر -->
+            <div class="book-leaf leaf-right cover-leaf">
+              <div class="leaf-header-bar">
+                <span class="cover-masthead-sub">THE OFFICIAL ELS CHRONICLE • ISSUE 01</span>
+                <span class="leaf-page-tag">غلاف العدد 01</span>
+              </div>
+              <div class="cover-branding">
+                <h1 class="cover-hero-title">المدرسة المصرية للغات</h1>
+                <div class="cover-issue-badge">
+                  <span>الإصدار الفصلي المعتمد</span>
+                  <span>•</span>
+                  <span>نوفمبر 2026</span>
+                </div>
+              </div>
+              <div class="cover-hero-media">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80" alt="معرض الابتكار" class="cover-photo">
+                <div class="cover-media-tag">الملف الرئيسي للغلاف</div>
+              </div>
+              <div class="cover-headline-block">
+                <h2 class="cover-headline-text">أسبوع الابتكار العلمي: عقول تصنع المستقبل في معامل الذكاء الاصطناعي</h2>
+                <p class="cover-headline-summary">أكثر من 45 مشروعاً تكنولوجياً وبحثياً يضع المدرسة في صدارة التميز العلمي الإقليمي.</p>
+              </div>
+              <div class="cover-teasers-grid">
+                <div class="teaser-item">
+                  <strong>🏆 رياضة:</strong> <span>منتخب السلة يتوج بالذهب</span>
+                </div>
+                <div class="teaser-item">
+                  <strong>💡 معلمين:</strong> <span>التدريب على أدوات الذكاء الاصطناعي</span>
+                </div>
+                <div class="teaser-item">
+                  <strong>📅 اختبارات:</strong> <span>إعلان جداول منتصف الفصل</span>
+                </div>
+              </div>
+              <div class="leaf-corner-number corner-right">صفحة 01</div>
+            </div>
+
+            <!-- ثنية كعب المجلة المفتوحة في المنتصف (Central Spine Crease & Shadow) -->
+            <div class="magazine-center-spine" aria-hidden="true"></div>
+
+            <!-- الصفحة اليسرى (Left Page): افتتاحية العدد وفهرس المحتويات -->
+            <div class="book-leaf leaf-left toc-leaf">
+              <div class="leaf-header-bar">
+                <span>افتتاحية العدد • كلمة إدارة المدرسة</span>
+                <span class="leaf-page-tag">فهرس المحتويات</span>
+              </div>
+              <div class="editorial-welcome-card">
+                <div class="editorial-crest-mark">ELS</div>
+                <h3 class="editorial-heading">كلمة رئيس التحرير وإدارة المدرسة</h3>
+                <p class="editorial-lead-text">"يسرنا أن نضع بين أيديكم هذا الإصدار التفاعلي الأول من مجلة مدرستنا، ليكون مرآة صادقة تعكس شغف أبنائنا الطلاب، وتفاني معلمينا، وشراكتنا المستمرة مع أولياء الأمور نحو بناء جيل مبدع وواعٍ."</p>
+                <span class="editorial-signature">— هيئة تحرير مجلة المدرسة المصرية للغات</span>
+              </div>
+
+              <!-- فهرس محتويات المجلة -->
+              <div class="toc-container">
+                <h4 class="toc-title">📋 دليل محتويات العدد:</h4>
+                <div class="toc-entry" data-jump="2">
+                  <div class="toc-num">03</div>
+                  <div class="toc-desc">
+                    <strong>ملف الابتكار والعلوم:</strong>
+                    <span>معرض الذكاء الاصطناعي ومشاريع الطاقة المستدامة</span>
+                  </div>
+                </div>
+                <div class="toc-entry" data-jump="2">
+                  <div class="toc-num">04</div>
+                  <div class="toc-desc">
+                    <strong>ركن الكادر الأكاديمي:</strong>
+                    <span>برنامج التطوير المهني ودمج الذكاء الاصطناعي في الفصول</span>
+                  </div>
+                </div>
+                <div class="toc-entry" data-jump="3">
+                  <div class="toc-num">05</div>
+                  <div class="toc-desc">
+                    <strong>الرياضة والبطولات:</strong>
+                    <span>تتويج منتخب كرة السلة بكأس بطولة دوري المدارس</span>
+                  </div>
+                </div>
+                <div class="toc-entry" data-jump="4">
+                  <div class="toc-num">07</div>
+                  <div class="toc-desc">
+                    <strong>التقويم والامتحانات:</strong>
+                    <span>جدول اختبارات منتصف الفصل الدراسي الأول وتوجيهات اللجان</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="leaf-seal-footer">
+                <span class="verified-seal-dot">✓</span>
+                <span>إصدار دوري معتمد رسمياً • التجمع الخامس</span>
+              </div>
+              <div class="leaf-corner-number corner-left">صفحة 02</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- الملف 2: أسبوع الابتكار وركن التطوير المهني (Spread 2) -->
+        <div class="magazine-page" data-page-num="2">
+          <div class="open-magazine-spread">
+            <!-- الصفحة اليمنى: معرض الابتكار العلمي -->
+            <div class="book-leaf leaf-right">
+              <div class="leaf-header-bar">
+                <span>ملف الابتكار والعلوم • المعرض السنوي</span>
+                <span class="leaf-page-tag">العلوم والتكنولوجيا</span>
+              </div>
+              <h3 class="mag-article-title">افتتاح معرض التكنولوجيا والذكاء الاصطناعي برعاية نخبة من علماء مصر</h3>
+              <div class="mag-photo-box">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80" alt="الابتكار العلمي">
+                <span class="mag-photo-caption">نماذج أولية ذكية طورها طلاب المرحلتين الإعدادية والثانوية في معامل المدرسة</span>
+              </div>
+              <p class="mag-article-body dropcap">شهدت أروقة المدرسة المصرية للغات صباح اليوم تظاهرة علمية متميزة عكست قدرات طلابنا في تحويل النظريات الأكاديمية إلى نماذج واقعية تخدم البيئة والمجتمع، بدءاً من الروبوتات الذكية وحتى خلايا الطاقة الشمسية المستدامة.</p>
+              <blockquote class="mag-quote-callout">"التعليم ليس ملء إناء، بل إيقاد شعلة الابتكار والفضول العلمي في قلب كل طالب."</blockquote>
+              <div class="mag-stats-pillbox">
+                <div class="stat-pill-sm"><strong>45+</strong> <span>مشروعاً ابتكارياً</span></div>
+                <div class="stat-pill-sm"><strong>3</strong> <span>محاور ذكية</span></div>
+                <div class="stat-pill-sm"><strong>100%</strong> <span>إنتاج طلابي</span></div>
+              </div>
+              <div class="leaf-corner-number corner-right">صفحة 03</div>
+            </div>
+
+            <!-- ثنية كعب المجلة المفتوحة في المنتصف -->
+            <div class="magazine-center-spine" aria-hidden="true"></div>
+
+            <!-- الصفحة اليسرى: ورش عمل المعلمين والتطوير المهني -->
+            <div class="book-leaf leaf-left">
+              <div class="leaf-header-bar">
+                <span>الكادر الأكاديمي • ورش التطوير المهني</span>
+                <span class="leaf-page-tag">هيئة التدريس</span>
+              </div>
+              <h3 class="mag-article-title">برنامج التدريب الأكاديمي: توظيف الذكاء الاصطناعي في الفصول المدرسية</h3>
+              <div class="mag-photo-box">
+                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80" alt="ورشة عمل المعلمين">
+                <span class="mag-photo-caption">مشاركة أكثر من 60 معلماً ومعلمة في برنامج التدريس الرقمي وتفريد التعلم</span>
+              </div>
+              <p class="mag-article-body">اختتم قسم التطوير الأكاديمي برنامجاً مكثفاً لدمج أحدث تقنيات التعليم التفاعلي، حيث تدرب المعلمون على تصميم أسئلة تقيس مهارات التفكير العليا، واستخدام الذكاء الاصطناعي كمساعد تربوي آمن يدعم الفروق الفردية للطلاب.</p>
+              <div class="mag-bullets-card">
+                <strong>أهم مخرجات البرنامج:</strong>
+                <ul>
+                  <li>تصميم خطط دروس تفاعلية مخصصة لكل طالب.</li>
+                  <li>بنوك أسئلة رقمية تركز على مهارات التحليل والاستنتاج.</li>
+                  <li>معايير النزاهة العلمية والتوجيه الأخلاقي لاستخدام التقنية.</li>
+                </ul>
+              </div>
+              <div class="leaf-corner-number corner-left">صفحة 04</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- الملف 3: البطولات الرياضية والمخيمات الكشفية (Spread 3) -->
+        <div class="magazine-page" data-page-num="3">
+          <div class="open-magazine-spread">
+            <!-- الصفحة اليمنى: بطولة كرة السلة -->
+            <div class="book-leaf leaf-right">
+              <div class="leaf-header-bar">
+                <span>الرياضة المدرسية • سجل الشرف</span>
+                <span class="leaf-page-tag">دوري المدارس</span>
+              </div>
+              <h3 class="mag-article-title">تتويج منتخب المدرسة بكأس دوري المدارس بعد مباراة بطولية (68 - 59)</h3>
+              <div class="mag-photo-box">
+                <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80" alt="بطولة السلة">
+                <span class="mag-photo-caption">فرحة لاعبي منتخب السلة برفع كأس البطولة والميداليات الذهبية</span>
+              </div>
+              <p class="mag-article-body dropcap">في إنجاز رياضي مشرف يضاف إلى سجلات المدرسة المصرية للغات، حصد منتخب كرة السلة (تحت 16 سنة) كأس المركز الأول بعد أداء حماسي وانضباط تكتيكي رفيع نال إشادة حكام البطولة وجميع المتابعين.</p>
+              <div class="mag-highlight-badge">
+                <span>🎖️ تكريم خاص: كرمت الإدارة مدرب الفريق واللاعبين في طابور الصباح المدرسي مع منحهم دروع التفوق الرياضي.</span>
+              </div>
+              <div class="leaf-corner-number corner-right">صفحة 05</div>
+            </div>
+
+            <!-- ثنية كعب المجلة المفتوحة في المنتصف -->
+            <div class="magazine-center-spine" aria-hidden="true"></div>
+
+            <!-- الصفحة اليسرى: مخيم وادي دجلة البيئي -->
+            <div class="book-leaf leaf-left">
+              <div class="leaf-header-bar">
+                <span>الكشافة والمخيمات • حماية البيئة</span>
+                <span class="leaf-page-tag">الأنشطة الميدانية</span>
+              </div>
+              <h3 class="mag-article-title">مغامرة استكشافية وبيئية لطلاب المرحلة الابتدائية بمحمية وادي دجلة</h3>
+              <div class="mag-photo-box">
+                <img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=800&q=80" alt="المخيم الكشفي">
+                <span class="mag-photo-caption">120 شبلاً وزهرة يشاركون في تدريبات التخييم والاعتماد على النفس</span>
+              </div>
+              <p class="mag-article-body">شارك طلاب الصفوف الرابع والخامس والسادس في معسكر كشفي بيئي جمع بين متعة الاستكشاف وتعلم مهارات البقاء والبوصلة ونصب الخيام، بالإضافة إلى حملة نظافة مجتمعية تحت شعار: "لا تترك خلفك سوى أثر قدمك".</p>
+              <div class="mag-bullets-card green-theme">
+                <strong>محطات المعسكر البيئي:</strong>
+                <ul>
+                  <li>تدريبات متقدمة على الإسعافات الأولية والتخييم الجماعي.</li>
+                  <li>جولة جيولوجية للتعرف على تكوينات صحراء مصر النادرة.</li>
+                  <li>تصنيف المخلفات البلاستيكية والتوعية بحماية الحياة البرية.</li>
+                </ul>
+              </div>
+              <div class="leaf-corner-number corner-left">صفحة 06</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- الملف 4: جداول الامتحانات والختام الرسمي (Spread 4) -->
+        <div class="magazine-page" data-page-num="4">
+          <div class="open-magazine-spread">
+            <!-- الصفحة اليمنى: جداول الامتحانات والضوابط -->
+            <div class="book-leaf leaf-right">
+              <div class="leaf-header-bar">
+                <span>لجنة الامتحانات • جداول منتصف الفصل</span>
+                <span class="leaf-page-tag">التقويم الأكاديمي</span>
+              </div>
+              <h3 class="mag-article-title">جدول اختبارات منتصف الفصل الدراسي الأول وتوجيهات الحضور والانضباط</h3>
+              <div class="exam-schedule-table">
+                <div class="schedule-row-card">
+                  <div class="stage-tag primary">المرحلة الابتدائية (4، 5، 6)</div>
+                  <div class="stage-date">الأحد 15 نوفمبر 2026</div>
+                </div>
+                <div class="schedule-row-card">
+                  <div class="stage-tag prep">المرحلة الإعدادية (جميع الصفوف)</div>
+                  <div class="stage-date">الإثنين 16 نوفمبر 2026</div>
+                </div>
+                <div class="schedule-row-card">
+                  <div class="stage-tag sec">المرحلة الثانوية (عام ولغات)</div>
+                  <div class="stage-date">الثلاثاء 17 نوفمبر 2026</div>
+                </div>
+              </div>
+              <div class="exam-rules-box">
+                <strong>تعليمات هامة لجميع الطلاب:</strong>
+                <ul>
+                  <li>الحضور لطابور الصباح الساعة 7:45 ص وبدء اللجان 8:30 ص.</li>
+                  <li>حظر اصطحاب الهواتف الذكية أو الساعات الذكية تماماً.</li>
+                  <li>إحضار كافة الأدوات الهندسية والمكتبية كاملة لكل طالب.</li>
+                </ul>
+              </div>
+              <div class="leaf-corner-number corner-right">صفحة 07</div>
+            </div>
+
+            <!-- ثنية كعب المجلة المفتوحة في المنتصف -->
+            <div class="magazine-center-spine" aria-hidden="true"></div>
+
+            <!-- الصفحة اليسرى: كلمة الختام والاعتماد الرسمي -->
+            <div class="book-leaf leaf-left closing-leaf">
+              <div class="leaf-header-bar">
+                <span>كلمة العدد الختامية • التواصل الرسمي</span>
+                <span class="leaf-page-tag">خاتمة العدد</span>
+              </div>
+              <div class="closing-seal-block">
+                <div class="gold-seal-crest">ELS</div>
+                <h4 class="closing-title">رحلة مستمرة نحو التميز والعطاء</h4>
+                <p class="closing-desc">"تظل المدرسة المصرية للغات الحصن التربوي الذي يغرس القيم الوطنية والأخلاقية الرفيعة، بالتوازي مع أرقى معايير التعليم العصري. نشكر كل من ساهم في إنجاح هذا العدد ونلقاكم في الإصدار القادم بإذن الله."</p>
+                <div class="editorial-board-sign">
+                  <strong>هيئة تحرير ونشر مجلة ELS</strong>
+                  <span>العلاقات العامة والإعلام المدرسي • 2026</span>
+                </div>
+              </div>
+
+              <!-- بطاقة الباركود والتوثيق الرسمي للمجلة -->
+              <div class="official-barcode-card">
+                <div class="barcode-graphic">||| | |||| | ||| |||| | || | |||</div>
+                <div class="barcode-details">
+                  <span>الرقم الدولي المعياري: ISSN 2026-889X</span>
+                  <span>مطابع المدرسة المصرية للغات • التجمع الخامس</span>
+                </div>
+              </div>
+
+              <div class="leaf-corner-number corner-left">صفحة 08</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- شريط التحكم السفلي بتقليب صفحات المجلة (ثابت وظاهر 100% ولا ينقطع أبداً) -->
+      <div class="magazine-flip-controls" id="magazine-controls-bar">
+        <button type="button" id="flip-prev-btn" class="mag-control-btn prev-btn" aria-label="الملف السابق">
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span data-i18n="mag_btn_prev">◀ الصفحة السابقة</span>
+        </button>
+
+        <!-- مؤشر وتصفح الملفات والصفحات -->
+        <div class="magazine-navigator-center">
+          <div class="spread-indicator-label">
+            <span id="mag-current-page-text">الملف 1 من 4 • غلاف العدد والافتتاحية</span>
+          </div>
+          <div class="mag-spread-pills" id="mag-spread-pills">
+            <button type="button" class="spread-pill-btn active" data-page="1">
+              <span class="pill-dot"></span>
+              <span class="pill-title">الغلاف</span>
+            </button>
+            <button type="button" class="spread-pill-btn" data-page="2">
+              <span class="pill-dot"></span>
+              <span class="pill-title">الابتكار</span>
+            </button>
+            <button type="button" class="spread-pill-btn" data-page="3">
+              <span class="pill-dot"></span>
+              <span class="pill-title">الرياضة</span>
+            </button>
+            <button type="button" class="spread-pill-btn" data-page="4">
+              <span class="pill-dot"></span>
+              <span class="pill-title">الامتحانات</span>
+            </button>
+          </div>
+        </div>
+
+        <button type="button" id="flip-next-btn" class="mag-control-btn next-btn" aria-label="الملف التالي">
+          <span data-i18n="mag_btn_next">الصفحة التالية ▶</span>
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </dialog>
+
+  <!-- القائمة الجانبية للحساب والإعدادات (Account & Settings Drawer) -->
+  <div id="drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
+  <aside id="settings-sidebar" class="settings-drawer" aria-labelledby="settings-drawer-title" aria-modal="true" role="dialog">
+    <div class="drawer-inner">
+      <div class="drawer-header">
+        <div class="drawer-header-title-box">
+          <svg class="drawer-title-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"/>
+          </svg>
+          <h2 id="settings-drawer-title" class="drawer-title" data-i18n="settings_title">الحساب والإعدادات</h2>
+        </div>
+        <button id="close-settings-drawer-btn" class="drawer-close-btn" aria-label="إغلاق">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="drawer-body">
+        <!-- الملف الشخصي -->
+        <div class="account-profile-card">
+          <div class="profile-avatar-wrap">
+            <div class="profile-avatar" id="user-avatar-display">م</div>
+            <span class="profile-active-badge"></span>
+          </div>
+          <div class="profile-details">
+            <h3 class="profile-name" id="user-name-display">أ. محمد عبد الرحمن</h3>
+            <span class="profile-role-badge" id="user-role-display">هيئة التدريس • المرحلة الثانوية</span>
+            <span class="profile-id">ID: ELS-2026-884</span>
+          </div>
+        </div>
+
+        <!-- تبديل اللغة -->
+        <div class="setting-block">
+          <div class="setting-row">
+            <div class="setting-text">
+              <span class="setting-name" data-i18n="lang_setting_name">لغة الواجهة (Language)</span>
+              <span class="setting-desc" data-i18n="lang_setting_desc">التبديل بين العربية والإنجليزية</span>
+            </div>
+            <div class="lang-switch-pills">
+              <button type="button" class="lang-pill active" data-lang="ar">العربية</button>
+              <button type="button" class="lang-pill" data-lang="en">English</button>
+            </div>
+          </div>
+        </div>
+
+        <hr class="drawer-divider">
+
+        <!-- الوضع الليلي -->
+        <div class="setting-block">
+          <div class="setting-row">
+            <div class="setting-text">
+              <span class="setting-name" data-i18n="darkmode_setting_name">الوضع الليلي (Dark Mode)</span>
+              <span class="setting-desc" data-i18n="darkmode_setting_desc">مظهر داكن مريح في الإضاءة الخافتة</span>
+            </div>
+            <label class="switch-toggle" for="drawer-dark-mode-toggle" aria-label="تبديل الوضع الليلي">
+              <input type="checkbox" id="drawer-dark-mode-toggle">
+              <span class="switch-slider">
+                <span class="switch-icon">☀️</span>
+                <span class="switch-icon">🌙</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <hr class="drawer-divider">
+
+        <!-- حجم الخط -->
+        <div class="setting-block">
+          <div class="setting-text">
+            <span class="setting-name" data-i18n="fontsize_setting_name">حجم خط القراءة</span>
+            <span class="setting-desc" data-i18n="fontsize_setting_desc">تكبير أو تصغير نصوص المقالات</span>
+          </div>
+          <div class="font-size-options">
+            <button type="button" class="font-size-btn" data-size="small">A- صغير</button>
+            <button type="button" class="font-size-btn active" data-size="normal">A قياسي</button>
+            <button type="button" class="font-size-btn" data-size="large">A+ كبير</button>
+          </div>
+        </div>
+
+        <hr class="drawer-divider">
+
+        <!-- سرعة السلايدر -->
+        <div class="setting-block">
+          <div class="setting-text">
+            <span class="setting-name" data-i18n="speed_setting_name">سرعة تقليب كروت اليوم</span>
+            <span class="setting-desc" data-i18n="speed_setting_desc">فترة بقاء الكارت قبل التقليب الذاتي</span>
+          </div>
+          <div class="timer-speed-options">
+            <button type="button" class="speed-btn" data-speed="5">5s</button>
+            <button type="button" class="speed-btn active" data-speed="10">10s (Default)</button>
+            <button type="button" class="speed-btn" data-speed="15">15s</button>
+          </div>
+        </div>
+
+        <hr class="drawer-divider">
+
+        <div class="secret-developer-hint-box">
+          <span class="hint-icon">🔐</span>
+          <div class="hint-text">
+            <strong>ملاحظة للمبرمج والإدارة:</strong>
+            <p>لإضافة أو تعديل الأخبار المعتمدة للمدرسة، انقر على شعار المدرسة بالأعلى 5 مرات متتالية لفتح لوحة التحكم السرية.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="drawer-footer">
+        <button id="reset-all-settings-btn" class="btn btn-secondary full-width" data-i18n="reset_settings_btn">
+          استعادة الإعدادات الافتراضية
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- إشعار عائم (Toast Notification) -->
+  <div id="toast-notification" class="toast-box" role="status" aria-live="polite">
+    <div class="toast-icon">
+      <svg viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+      </svg>
+    </div>
+    <span id="toast-message" class="toast-text">تمت العملية بنجاح</span>
+  </div>
+
+  <!-- تذييل الصفحة الرسمي (Editorial Footer) -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <div class="footer-logo-title">
+          <div class="footer-crest">ELS</div>
+          <div>
+            <h3 class="footer-school-name" data-i18n="school_title">المدرسة المصرية للغات</h3>
+            <p class="footer-school-sub">Egyptian Language School • Established for Future Leaders</p>
+          </div>
+        </div>
+        <p class="footer-description" data-i18n="footer_desc">
+          منصة إخبارية رقمية هادئة تسلط الضوء على إنجازات مجتمع المدرسة التعليمي من طلاب ومعلمين وإدارة، وتقدم الإعلانات والتقارير بمصداقية وأناقة صحفية.
+        </p>
+      </div>
+
+      <div class="footer-col links-col">
+        <h4 class="footer-heading" data-i18n="footer_sections">صفحات وأقسام الموقع</h4>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-nav-link" data-page="home" data-i18n="tab_home">الرئيسية وكل المستجدات</a></li>
+          <li><a href="#" class="footer-nav-link" data-page="students" data-i18n="tab_students">بوابة شؤون وتفوق الطلاب</a></li>
+          <li><a href="#" class="footer-nav-link" data-page="teachers" data-i18n="tab_teachers">التطوير المهني وهيئة التدريس</a></li>
+          <li><a href="#" class="footer-nav-link" data-page="events" data-i18n="tab_events">جدول الفعاليات ومواعيد الاختبارات</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col contact-col">
+        <h4 class="footer-heading" data-i18n="footer_contact">التواصل الرسمي</h4>
+        <p class="footer-contact-item">
+          <strong data-i18n="address_label">العنوان:</strong> <span data-i18n="address_val">التجمع الخامس، القاهرة الجديدة، جمهورية مصر العربية</span>
+        </p>
+        <p class="footer-contact-item">
+          <strong data-i18n="email_label">البريد الإخباري:</strong> news@els-egypt.edu.eg
+        </p>
+        <p class="footer-contact-item">
+          <strong data-i18n="phone_label">هاتف الإدارة:</strong> +20 2 2617 0000
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <p data-i18n="footer_copyright">© 2026 جميع الحقوق محفوظة — المدرسة المصرية للغات (Egyptian Language School). صُممت المنصة وفق أرقى معايير الصحافة المدرسية الرقمية.</p>
+      <div class="footer-bottom-links">
+        <button id="footer-settings-btn" class="footer-action-link" data-i18n="settings_title">الإعدادات والمظهر</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ملف المنطق البرمجي والبيانات -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E40AF" />
+      <stop offset="100%" stop-color="#1E3A8A" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background Shield with Glow -->
+  <path d="M32 4 L8 14 V28 C8 44 18 56 32 60 C46 56 56 44 56 28 V14 Z" 
+        fill="url(#shieldGrad)" 
+        stroke="url(#goldGrad)" 
+        stroke-width="3" 
+        stroke-linejoin="round"
+        filter="url(#glow)" />
+
+  <!-- Inner Golden Rim -->
+  <path d="M32 9 L13 17 V28 C13 41 21 51 32 55 C43 51 51 41 51 28 V17 Z" 
+        fill="none" 
+        stroke="url(#goldGrad)" 
+        stroke-width="1.2" 
+        stroke-opacity="0.7" />
+
+  <!-- Crown / Star on Top -->
+  <polygon points="32,13 34,18 39,18 35,21 37,26 32,23 27,26 29,21 25,18 30,18" 
+           fill="url(#goldGrad)" />
+
+  <!-- Open Knowledge Book -->
+  <path d="M22 36 C27 34 30 35 32 37 C34 35 37 34 42 36 V46 C37 44 34 45 32 47 C30 45 27 44 22 46 Z" 
+        fill="#FFFFFF" 
+        opacity="0.95" />
+  <path d="M32 37 V47" stroke="#1E3A8A" stroke-width="1.5" />
+
+  <!-- School Monogram: ELS -->
+  <text x="32" y="32" 
+        font-family="'Plus Jakarta Sans', system-ui, sans-serif" 
+        font-weight="900" 
+        font-size="9" 
+        fill="url(#goldGrad)" 
+        text-anchor="middle" 
+        letter-spacing="1">ELS</text>
+</svg>
